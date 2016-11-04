@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PM</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+   <script type="text/javascript" src="hrcontroller.js"></script>
+
+  }
+
+  
+  <style>
+    .thead1{
+      color:#336699;
+    }
+  </style>
+</head>
+<body ng-app="projectHrApp" ng-controller="projectHrCOntroller">
+<div class="container">
+<h2>hr page</h2>
+<button class = "btn btn-primary" style = "float : right; margin-right : 100px" ng-click = "hrLogOut()">Logout</button>
+<table style="margin-top:50px; box-shadow: 5px 5px 5px #888888;" class="table table-striped table-bordered"
+>
+    <thead> 
+        
+      <tr>
+        <th class="thead1">Client ID</th>
+        <th class="thead1">Client Name</th>
+        <th class="thead1">Client ACC.NO</th>
+        <th class="thead1">Technical Skills</th>
+        <th class="thead1">Required Date</th>
+        <th class="thead1">MOE</th>
+        <th class="thead1">No Of Requirement</th>
+
+      </tr>
+    </thead>
+    <tbody >
+      <tr ng-repeat="projects in client_info">
+      <td>{{projects.client_name}}</td>
+      <td>{{projects.client_id}}</td>
+      <td>{{projects.client_acc_nums}}</td>
+      <td>{{projects.tech_skills}}</td>
+      <td>{{projects.required_date}}</td>
+      <td>{{projects.mode_of_emplymnt}}</td>
+      <td>{{projects.no_of_requirements}}</td>
+      
+      </tr>
+
+    </tbody>
+  </table>
+
+  </div>
+
+  <div class="container">
+<h2>Candidate to select</h2>
+<table style="margin-top:50px; box-shadow: 5px 5px 5px #888888;" class="table table-striped table-bordered"
+>
+    <thead> 
+    <tr>
+    <td> <input type="text" name="name" class="form-control" ng-model="candidate.can_name"></td>
+    <td><input type="text" name="email" class="form-control" ng-model="candidate.can_id"></td>
+    <td><input type="text" name="mobile" class="form-control" ng-model="candidate.can_qual"></td>
+    <td><input type="text" name="mobile" class="form-control" ng-model="candidate.cli_id"></td>
+    <td><input type="text" name="mobile" class="form-control" ng-model="candidate.moe"></td>
+    <td><button class="btn btn-primary" ng-click = "addCandidates()">Add</button></td>
+   </tr>   
+      <tr>
+        <th class="thead1">Candidate name</th>
+        <th class="thead1">Candidate Id</th>
+        <th class="thead1">Candidate Qualification</th>
+    
+        <th class="thead1">Client Id</th>
+        <th class="thead1">Mode of experience</th>
+        <th class="thead1">selection</th>
+
+      
+
+      </tr>
+    </thead>
+    <tbody >
+     <tr ng-repeat="candidate in candidatesinfo">       
+      <td>{{candidate.can_name}}</td>
+      <td>{{candidate.can_id}}</td>
+      <td>{{candidate.can_qual}}</td>
+      <td>{{candidate.cli_id}}</td>
+      <td>{{candidate.moe}}</td>
+      <td><button class="btn btn-primary" ng-click="addcandidate(candidate._id)">select</button></td>
+     </tr>
+    </tbody>
+  </table>
+ 
+
+
+</body>
+</html>

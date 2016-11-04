@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html ng-app = "pmRegApp">
+
+
+<head>
+	<title>Form</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+#student_div
+{
+ margin-top:0%; 
+ margin-left:5%;
+ margin-right:5%;
+ border:2px solid #336699;
+ width:89%;
+ height:100%;
+ box-shadow:7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+}
+#student_header
+{
+width:100%;
+height:15%;
+background-color:#336699;
+}
+ #student_head_titile{
+ padding:35px;
+ font-size:60px;
+ opacity: 0.5;
+ color:white;
+ text-align:center;
+ }
+ table td {
+    border-top: none !important;
+  }
+ 
+</style>
+
+</head>
+
+
+<body ng-controller = "pmRegController">
+<div id="student_div">
+<div id="student_header">
+<div id="student_head_titile">Registration</div>
+</div>
+
+<div id="student_port">
+
+
+<div class="container">
+  <h2 style="margin-left: 20%;margin-right:20%;"></h2>
+  <hr>
+  <p><span style="color:red;font-size: 25px">*</span> -Mandatory Fields</p>
+  <form style="margin-left: 20%;margin-right:20%;">
+  <table  class="table">
+    <tr class="form-group">
+     <td style="font-size:15px;">First  Name : <span style="color :red;font-size: 25px;">*</span></td>
+      <td><input type="text" class="form-control" id="usr" ng-model = "sales.first_name" required></td>
+
+    <tr class="form-group">
+     <td style="font-size:15px;">Last Name : <span style="color :red;font-size: 25px;">*</span></td>
+      <td><input type="text" class="form-control" id="usr" ng-model = "sales.last_name" required></td>
+    </tr>
+
+    <tr class="form-group">
+     <td style="font-size:15px;">Email : <span style="color :red;font-size: 25px;">*</span></td>
+      <td><input type="text" class="form-control" id="usr" ng-model = "sales.email" required>
+      </td>
+    </tr>
+
+    <tr class="form-group">
+     <td style="font-size:15px;">Designation :<span style="color :red;font-size: 25px;">*</span></td>
+     <td>
+         <select class="form-control" ng-model = "sales.designation">
+             <option value="salesexcutive">Sales executive</option>
+            <option value="projectmanager">Project Manager</option>            
+            <option value="humanresource">Human Resource</option>
+         </select>
+  
+     <!-- <input type="text" class="form-control" id="usr" ng-model = "client.mode_of_emplymnt" required> -->
+       <!-- <select ng-model="client.mode_of_emplymnt" ng-options="item for item in names"></select> -->
+     </td>
+    </tr>
+
+
+    <tr class="form-group">
+     <td style="font-size:15px;">Password : <span style="color :red;font-size: 25px;">*</span></td>
+      <td><input type="password" class="form-control" id="usr" ng-model = "sales.password" required></td>
+    </tr>
+
+     <tr class="form-group">
+     <td style="font-size:15px;">Confirm Password :<span style="color :red;font-size: 25px;">*</span></td>
+      <td><input type="password" class="form-control" id="usr" ng-model = "sales.confirm_password" required></td>
+    </tr>
+
+    
+     <tr class="form-group">
+     <td></td>
+     <td><button class="btn btn-primary" ng-click = "pmSave()">Submit</button>
+    </tr>
+    
+    </table>
+  </form>
+</div>
+
+<!--<script type="text/javascript" src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>-->
+      <script type="text/javascript" src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+      <script type="text/javascript" src = "pmRegController.js"></script>
+
+      </div>
+      </div>
+
+</body>
+</html>

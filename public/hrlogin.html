@@ -1,0 +1,88 @@
+<html ng-app = "hrLoginApp" ng-controller = "hrLoginController">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<script type="text/javascript" src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+      <script type="text/javascript" src = "hrlogincontroller.js"></script>
+
+
+
+  <style>
+#student_div
+{
+ margin-top:0%; 
+ margin-left:5%;
+ margin-right:5%;
+ border:2px solid #336699;
+ width:89%;
+ height:700px;
+ box-shadow:7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+}
+#student_header
+{
+width:100%;
+height:15%;
+background-color:#336699;
+}
+ #student_head_titile{
+ padding:20px;
+ font-size:60px;
+ opacity: 0.5;
+ color:white;
+ text-align:center;
+ }
+ table td {
+    border-top: none !important;
+  }
+ 
+</style>
+    
+</head>
+
+<body> 
+
+<div id="student_div">
+<div id="student_header">
+<div id="student_head_titile">Welcome To Human Resources</div>
+</div>
+
+<div id="student_port">
+
+
+  <div style="background-color:#e6e6e6;width:700px;height:300px;margin-top:80px;box-shadow:3px 3px 3px #000000;margin-left:250px;border-radius: 15px;" class="container">
+  <center><h2>Login</h2></center>
+  <form style="margin-top:50px;margin-left:80px;margin-right:80px;"class="form-group">
+
+    <table class="table">
+    <tr>
+    <td><label style="color: #336699;font-size:18px;"><b>Username or Email: </b></label></td>
+    <td><input type="text" class="form-control" placeholder="Enter Username" name="uname" ng-model = "uname" required></td>
+    </tr>
+    <tr>
+    <td><label style="color: #336699;font-size:18px;" ><b>Password : </b></label></td>
+    <td><input type="password" class="form-control" placeholder="Enter Password" name="psw" ng-model = "password" required></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td><button type="submit" class="btn btn-primary"  ng-click = "hrLogin()">Login</button></td>
+    </tr>   
+  </div>
+
+
+   </table>
+   <div>
+   <center>
+     <p>Are you new client? <a href="hrReg.html"><b>Sign Up</b></span></a> here</p></center>
+     </form>
+  </div>
+</div>
+</div>
+</body>
+</html>
+

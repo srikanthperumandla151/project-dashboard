@@ -1,0 +1,121 @@
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SmartMenus core CSS (required) -->
+<link href="/css/sm-core-css.css" rel="stylesheet" type="text/css" />
+
+<!-- "sm-blue" menu theme (optional, you can use your own CSS, too) -->
+<link href="/css/sm-blue.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<style>
+body{
+    height:600px;
+}
+
+.centered-form{
+	margin-top: 100px;
+}
+
+.centered-form .panel{
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+
+label.label-floatlabel {
+    font-weight: bold;
+    color: #46b8da;
+    font-size: 11px;
+}
+</style>
+</head>
+<body ng-app='myApp' ng-controller='myController'>
+<div style="margin-top:20px !important;"><a href="/" title="L&amp;T Technology Services">
+                        <img src="images/site_logo.jpg" alt="L&amp;T Technology Services" width="250" height="30" /></a></div><br>
+
+<div class="container">
+        <div class="row centered-form">
+		<form  name="myForm" novalidate align="center">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+		<div class="panel panel-default">
+        		<div class="panel-heading">
+			    		<h3 class="panel-title">Please sign up for LTTS</h3>
+			 			</div>
+			 			<div class="panel-body">
+			    	<div class="row">
+			    	<div class="col-xs-6 col-sm-6 col-md-6">
+			    					
+				<div class="form-group">
+			                First Name<input type="text" name="fname" class="form-control input-sm" ng-model="custom.fname" placeholder="First Name" required>
+<span style="color:red" ng-show="myForm.fname.$touched && myForm.fname.$invalid">first name is required.</span>
+								</br>
+			    					</div>
+			    				</div>
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						Last Name<input type="text" name="lname" class="form-control input-sm" ng-model="custom.lname" placeholder="Last Name" required>
+<span style="color:red" ng-show="myForm.lname.$touched && myForm.lname.$invalid">Last name is required.</span>
+			    					</div>
+			    				</div>
+			    			</div>
+<div class="form-group">
+			    				Email<input type="email" name="email" class="form-control input-sm" ng-model="custom.email" placeholder="Email" required>
+
+<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+<span ng-show="myForm.email.$error.required">Email is required.</span>
+<span ng-show="myForm.email.$error.email">Invalid email address.</span>
+</span>
+</div>
+
+			    			<div class="row">
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						Password<input type="password" name="pwd" class="form-control input-sm" ng-model="custom.pwd" ng-minlength=6 ng-maxlength=12 placeholder="Password" required>
+
+<span style="color:red" ng-show="myForm.pwd.$touched && myForm.pwd.$invalid">Password is required.</span>
+			    					</div>
+			    				</div>
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+
+			    						Confirm Password<input type="password" name="cpwd" class="form-control input-sm" ng-model="custom.cpwd" ng-minlength=6 ng-maxlength=12 placeholder="confirm Password" required>
+<span  style="color:red" ng-show="myForm.cpwd.$touched && myForm.cpwd.$invalid">confirm password is required.</span>
+
+			   </div>
+			    				</div>
+			    			</div>
+			    			
+			    			<input type="submit" value="Register" class="btn btn-info btn-block" ng-click="insert()" ng-disabled="myForm.$invalid">
+			    		
+			    		
+			    	</div>
+	    		</div>
+    		</div>
+			</form>
+    	</div>
+    </div>
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<!-- SmartMenus jQuery plugin -->
+<script type="text/javascript" src="/js/jquery.smartmenus.js"></script>
+
+<!-- SmartMenus jQuery Keyboard Addon -->
+<script type="text/javascript" src="/js/jquery.smartmenus.keyboard.js"></script>
+
+    <!-- FlexSlider -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/controller.js"></script>
+  <!-- SmartMenus jQuery init -->
+<script type="text/javascript">
+    $(function() {
+        $('#main-menu').smartmenus({
+            subMenusSubOffsetX: 1,
+            subMenusSubOffsetY: -8
+        });
+        $('#main-menu').smartmenus('keyboardSetHotkey', '123', 'shiftKey');
+    });
+</script>
+</html>

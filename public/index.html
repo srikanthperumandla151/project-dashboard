@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html ng-app="myApp" lang="en">
+<head>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta charset="ISO-8859-1">
+<title>L&T Infotech</title>
+<meta charset="utf-8">
+<meta name="msvalidate.01" content="F4F17B30ED0DD8A68E1A31FFC6841CB5" />
+
+<meta name="revisit-after" content="30"/>
+<meta name="rating" content="Safe For Kids"/>
+<!--<meta name="author" content="PowerHMS"/>-->
+<!--<link rel="shortcut icon" href="favicon.ico"/>
+<meta name="geo.placename" content="Ahmedabad, Gujarat, India" />
+<meta name="geo.region" content="IN-GJ" />-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<!--StyleSheets -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+
+<link href="bootstrap.min.css" rel="stylesheet" />
+<script src="angular.min.js"></script>
+<style>
+
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+.tab-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.tab-group li a {
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+  background: rgba(160, 179, 176, 0.25);
+  color: #a0b3b0;
+  font-size: 20px;
+  float: left;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+.tab-group li a:hover {
+  background: #179b77;
+  color: #ffffff;
+}
+.tab-group .active a {
+  background: #1ab188;
+  color: #ffffff;
+}
+
+.tab-content > div:last-child {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 300;
+  margin: 0 0 40px;
+}
+
+label {
+  position: absolute;
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  left: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size: 22px;
+}
+label .req {
+  margin: 2px;
+  color: #1ab188;
+}
+
+label.active {
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  left: 2px;
+  font-size: 14px;
+}
+label.active .req {
+  opacity: 0;
+}
+
+label.highlight {
+  color: #ffffff;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+.top-row > div {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+.top-row > div:last-child {
+  margin: 0;
+}
+label {
+  position: absolute;
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  left: 13px;
+  color: #179b77;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size: 22px;
+}
+.field-wrap {
+  position: relative;
+  margin-bottom: 40px;
+}
+label .req {
+  margin: 2px;
+  color: #1ab188;
+}
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #1ab188;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+.button:hover, .button:focus {
+  background: #179b77;
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+}
+
+.forgot {
+  margin-top: -20px;
+  text-align: right;
+} 
+#input{
+ font-size: 22px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  color: #24313c;
+  border-radius: 0;
+  -webkit-transition: border-color .25s ease, box-shadow .25s ease;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+
+</style>
+</head>
+
+<body id="top">
+<header>
+<div class="container">
+<h1>IT Consultancy services techera pvt ltd India.</h1>
+<div class="float-right">
+<ul class="social">
+<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+</ul>
+</div>
+</div>
+</header>
+<style type="text/css">
+  #headercolor{
+    background-color: #75b7f1;
+  }
+
+</style>
+
+<nav  id="headercolor"  data-offset-top="50" role="navigation" position="fixed">
+
+  <div class="container-fluid">
+
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+					  <div class="navbar-brand">
+						<img src="images\tech.jpg" width="180px" height="30px" alt="Tecera it consultant"/>
+					  </div>
+					  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#my-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					  </button>
+      
+			</div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+								<div class="collapse navbar-collapse"  id="my-collapse" >     
+								  <ul class="nav navbar-nav navbar-right">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="#">Who Are We?</a></li>
+									
+		<li class="dropdown">
+		<a class="dropdown-toggle" data-toggle="dropdown">Login/Register <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="loginsale.html">Sale Executive</a>
+          <li><a href="projectman.html">Project Manager</a></li>
+          <li><a href="hrlogin.html">HR</a></li></li>
+		 </ul>
+		 </li>
+									
+									<li><a href="about.html">About us</a></li>       
+									<li><a href="contact.html">Contact Us</a></li>
+									  						
+								  </ul>
+								</div><!-- /.navbar-collapse -->
+					</div>
+					</nav>
+					<!--navigaTION slider-->
+					
+					
+					 <style>
+        /* use navbar-wrapper to wrap navigation bar, the purpose is to overlay navigation bar above slider */
+        .navbar-wrapper {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            height: 51px;
+        }
+        .navbar-wrapper > .container {
+            padding: 0;
+        }
+
+        @media all and (max-width: 600px ){
+            .navbar-wrapper {
+                position: relative;
+                top: 0px;
+            }
+        }
+    </style>
+    
+
+    <div style="min-height: 50px;">
+        <!-- Jssor Slider Begin -->
+        <!-- To move inline styles to css file/block, please specify a class name for each element. --> 
+        <!-- ================================================== -->
+        <div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto;
+        top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
+            <!-- Loading Screen -->
+            <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+                <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block;
+                top: 0px; left: 0px; width: 100%; height: 100%;">
+                </div>
+                <div style="position: absolute; display: block; background: url(../img/loading.gif) no-repeat center center;
+                top: 0px; left: 0px; width: 100%; height: 100%;">
+                </div>
+            </div>
+            <!-- Slides Container -->
+            <div>
+            <div u="slides" style="position: absolute; left: 0px; top: 0px; width: 1300px; height: 500px; overflow: hidden; ">
+                <div>
+                    <img u="image" src2="img/1920/slide1.jpg" />
+                </div>
+                <div>
+                    <img u="image" src2="img/1920/slide2.jpg" />
+                </div>
+                <div>
+                    <img u="image" src2="img/1920/slide3.jpg" />
+                </div>
+				 <div>
+                    <img u="image" src2="img/1920/slide4.jpg" />
+                </div>
+				 <div>
+                    <img u="image" src2="img/1920/slide5.jpg" />
+                </div>
+            </div>
+            </div>
+			
+            <!--#region Bullet Navigator Skin Begin -->
+            <!-- Help: http://www.jssor.com/tutorial/set-bullet-navigator.html -->
+            <style>
+                /* jssor slider bullet navigator skin 21 css */
+                /*
+                .jssorb21 div           (normal)
+                .jssorb21 div:hover     (normal mouseover)
+                .jssorb21 .av           (active)
+                .jssorb21 .av:hover     (active mouseover)
+                .jssorb21 .dn           (mousedown)
+                */
+                .jssorb21 {
+                    position: absolute;
+                }
+                .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av {
+                    position: absolute;
+                    /* size of bullet elment */
+                    width: 19px;
+                    height: 19px;
+                    text-align: center;
+                    line-height: 19px;
+                    color: white;
+                    font-size: 12px;
+                    background: url(img/b21.png) no-repeat;
+                    overflow: hidden;
+                    cursor: pointer;
+                }
+                .jssorb21 div { background-position: -5px -5px; }
+                .jssorb21 div:hover, .jssorb21 .av:hover { background-position: -35px -5px; }
+                .jssorb21 .av { background-position: -65px -5px; }
+                .jssorb21 .dn, .jssorb21 .dn:hover { background-position: -95px -5px; }
+            </style>
+            <!-- bullet navigator container -->
+            <div u="navigator" class="jssorb21" style="bottom: 26px; right: 6px;">
+                <!-- bullet navigator item prototype -->
+                <div u="prototype"></div>
+            </div>
+            <!--#endregion Bullet Navigator Skin End -->
+            
+            <!--#region Arrow Navigator Skin Begin -->
+            <!-- Help: http://www.jssor.com/tutorial/set-arrow-navigator.html -->
+            <style>
+                /* jssor slider arrow navigator skin 21 css */
+                /*
+                .jssora21l                  (normal)
+                .jssora21r                  (normal)
+                .jssora21l:hover            (normal mouseover)
+                .jssora21r:hover            (normal mouseover)
+                .jssora21l.jssora21ldn      (mousedown)
+                .jssora21r.jssora21rdn      (mousedown)
+                */
+                .jssora21l, .jssora21r {
+                    display: block;
+                    position: absolute;
+                    /* size of arrow element */
+                    width: 55px;
+                    height: 55px;
+                    cursor: pointer;
+                    background: url(img/a21.png) center center no-repeat;
+                    overflow: hidden;
+                }
+                .jssora21l { background-position: -3px -33px; }
+                .jssora21r { background-position: -63px -33px; }
+                .jssora21l:hover { background-position: -123px -33px; }
+                .jssora21r:hover { background-position: -183px -33px; }
+                .jssora21l.jssora21ldn { background-position: -243px -33px; }
+                .jssora21r.jssora21rdn { background-position: -303px -33px; }
+            </style>
+            <!-- Arrow Left -->
+            <span u="arrowleft" class="jssora21l" style="top: 123px; left: 8px;">
+            </span>
+            <!-- Arrow Right -->
+            <span u="arrowright" class="jssora21r" style="top: 123px; right: 8px;">
+            </span>
+            <!--#endregion Arrow Navigator Skin End -->
+            <a style="display: none" href="http://www.jssor.com">Bootstrap Carousel</a>
+        </div>
+        <!-- Jssor Slider End -->
+    </div>
+
+    
+
+    </div><!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="ie10-viewport-bug-workaround.js"></script>
+
+    <!-- jssor slider scripts-->
+    <!-- use jssor.slider.debug.js for debug -->
+    <script type="text/javascript" src="js/jssor.slider.mini.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+
+            var options = {
+                $FillMode: 2,                                       //[Optional] The way to fill image in slide, 0 stretch, 1 contain (keep aspect ratio and put all inside slide), 2 cover (keep aspect ratio and cover whole slide), 4 actual size, 5 contain for large image, actual size for small image, default value is 0
+                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $Idle: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1,                                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+
+                $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideEasing: $JssorEasing$.$EaseOutQuint,          //[Optional] Specifies easing for right to left animation, default value is $JssorEasing$.$EaseOutQuad
+                $SlideDuration: 800,                               //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+                //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+                $Cols: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $Cols is greater than 1, or parking position is not 0)
+              
+                $BulletNavigatorOptions: {                          //[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$,                 //[Required] Class to create navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 1,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                    $Rows: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
+                    $SpacingX: 8,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $SpacingY: 8,                                   //[Optional] Vertical space between each item in pixel, default value is 0
+                    $Orientation: 1,                                //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                    $Scale: false                                   //Scales bullets navigator or not while slider scale
+                },
+
+                $ArrowNavigatorOptions: {                           //[Optional] Options to specify and enable arrow navigator or not
+                    $Class: $JssorArrowNavigator$,                  //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 1,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 2,                                 //[Optional] Auto center arrows in parent container, 0 No, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+                }
+            };
+
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizing
+            function ScaleSlider() {
+                var bodyWidth = document.body.clientWidth;
+                if (bodyWidth)
+                    jssor_slider1.$ScaleWidth(Math.min(bodyWidth, 1920));
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+            ScaleSlider();
+
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+    </script>
+  
+  
+						<!--slider end-->
+						<!--next div-->
+						<div>
+						<section class="container-fluid homecont">
+<div class="container">
+
+<h2>OVERVIEW</h2>
+<div class="col-lg-12">
+<p>
+  TechEra Consultancy is a specialized management, technical, and consulting division of Jacobs Engineering Group Inc. Jacobs, with 2013 revenues of nearly $12 billion, is one of the world's largest and most diverse providers of technical, professional, and construction services.
+With more than 500 full-time professionals and offices throughout the world, Jacobs Consultancy provides a full range of industry-leading, technically superior planning, management, and consulting services to meet the evolving needs of our clients.
+We have a reputation for being passionate about consulting and innovation, and providing enduring results for our clients. We continuously strive to enhance that reputation by maintaining the highest standards of service to our clients. We are proud and delighted to introduce you to our company and to our capabilities.
+Our staff of professionals combine advanced technical backgrounds with a depth of "real world" experience in planning, programming, risk analysis, studies, financial consulting, energy optimization, regulatory compliance, environmental services, and an array of other specialties.
+</p>
+</div>
+<div class="col-lg-4 four-col">
+<h3><i class="fa fa-lg fa-th-list"></i>Businesses</h3>
+<p>We provide new and existing businesses with a wide range of business development solutions. Whether you are an individual, SME or operating within the corporate sector, we believe that your experience of working with us should be as positive as possible. Therefore, we focus on what your requirements are, and tailor our services accordingly. Through sharing best practices, providing mentoring, training and support, we will help your business reach its full potential.</p>
+</div>
+<div class="col-lg-4 four-col">
+<h3><i class="fa fa-lg fa-book"></i>Educational</h3>
+<p>We passionately motivate young people and teachers to be the best that they can be. We support schools, colleges and Universities to enable their students to be prepared for a smooth transition to the world of employment or business. At the same time, we help them realise their full personal potential. We offer one to one sessions, group coaching sessions, mentoring, motivational presentations and workshops.</p>
+</div>
+<div class="col-lg-4 four-col">
+<h3><i class="fa fa-lg fa-globe"></i>Individuals</h3>
+<p>As an EFT Accredited Trainer/Master Practitioner, NLP, Matrix Reimprinting and PTT Practitioner, we offer Personal development coaching and workshops to enable you to reach your full potential. We provide a safe and friendly environment to help you be the person you want to be though one on one coaching, motivational and stress management group workshops.</p>
+</div>
+
+</div>
+
+</section>
+
+
+						</div>
+						<!--div ends->
+  <!-- next middle div -->
+<!--next div start-->
+<div>
+<section class="container-fluid home-features">
+<div class="container">
+<h2>SERVICES</h2>
+<div class="col-lg-12">
+<p>Your application portfolio is a key determinant factor that enables you to get new business processes, products and services to initiate market leadership and differentiation. With help of new and innovative applications, we assist you to eradicate labor-intensive processes and enhance receptiveness and excellence. We comprehend the fact that application development requirements of clients differ and so we work with you to design and position application development solutions that are suitable to your exclusive requirements and provide a competitive advantage to you</p>
+
+<div class="col-lg-3">
+<h3><i class="fa fa-thumbs-up"></i><br>Work we Do</h3>
+<p>
+TechEra Strategy shapes our clients’ future, combining deep business insight with the understanding of how technology will impact industry and business models. Our focus on issues related to digital disruption, redefining competitiveness.
+</p>
+</div>
+<div class="col-lg-3">
+<h3><i class="fa fa-question"></i><br>Why We Are Different</h3>
+<p>Whether focused on strategies for business, technology or operations, Techera Strategy has the people, skills and experience to effectively shape client value. We offer highly objective points of view on C-suite themes, with an emphasis on business and technology. </p>
+</div>
+<div class="col-lg-3">
+<h3><i class="fa fa-share-alt"></i><br>consulting</h3>
+<p>To transform your business, you need a partner—One who brings you new and innovative ideas every day. A partner with deep industry knowledge, meaningful insights and the broadest range of capabilities. A partner who works shoulder to shoulder with you to help you reach the next level of performance.</p>
+</div>
+<div class="col-lg-3">
+<h3><i class="fa fa-phone"></i><br>Technology</h3>
+<p>The human species' use of technology began with the conversion of natural resources into simple tools. The prehistoric discovery of how to control fire and the later Neolithic Revolution increased the available sources of food and the invention of the wheel helped humans to travel in and control their environment.</p>
+</div>
+
+
+</div>
+
+
+
+</div>
+</section>
+
+
+</div>
+
+
+<!--ends div-->
+  
+  </div>
+  
+
+
+
+
+
+
+<footer>
+<div class="container">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="#">Overview</a></li>
+<li><a href="#">services</a></li>
+<li><a href="about.html">About Us</a></li>
+
+<li><a href="#">Contact Us</a></li>
+</ul>
+<ul class="ft-social">
+<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+</ul>
+<p>&copy; Copy rights 2016. srikanth.tech era itconsluting. All rights reserved.</p>
+</div>
+<p class="text-right ftnote">A product by Srikanth</a></p>
+</footer>
+
+<!-- signup: -->
+       
+        </div>
+        
+  
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- end sign up -->
+		</div>
+		
+
+<!--Javascripts-->
+
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>
